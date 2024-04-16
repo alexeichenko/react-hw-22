@@ -1,0 +1,31 @@
+@use '../../scss/abstracts';
+
+.article-about {
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+
+	@include abstracts.mixin_clamp($property: padding, $px: 50);
+
+	&__title {
+		@include abstracts.mixin_font(
+			$cl-ratio: 1.2,
+			$cl-px: 21,
+			$font-weight: 700,
+			$text-transform: uppercase,
+			$line-height: 1.5,
+			$letter-spacing: 8px,
+		);
+	}
+
+	&__text {
+		@include abstracts.mixin_font(
+			$cl-ratio: 1.2,
+			$cl-px: 18,
+			$font-weight: 600,
+			$line-height: 1.5,
+			$color: var(--global-grey),
+		);
+	}
+}

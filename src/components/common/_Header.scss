@@ -1,0 +1,35 @@
+@use '../../scss/abstracts';
+@use '../../scss/base/media-queries' as breakpoint;
+
+.header {
+
+	background: url('../../img/desktop-image-hero-1.jpg') center / cover no-repeat;
+
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+
+	padding: abstracts.function_em(50);
+
+	@include breakpoint.mq(mobile) {
+		flex-direction: column;
+		align-items: center;
+		justify-content: start;
+
+		& .burger {
+			align-self: flex-start;
+			margin-top: abstracts.function_em(-25);
+		}
+	}
+}
+
+.logo {
+
+	padding: abstracts.function_rem(5) abstracts.function_rem(50);
+
+	&__link {
+		& img {
+			max-width: fit-content;
+		}
+	}
+}
