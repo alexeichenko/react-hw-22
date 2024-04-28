@@ -1,0 +1,43 @@
+@use '../../scss/abstracts';
+@use '../../scss/base/media-queries' as breakpoint;
+
+.hero {
+
+	height: 70svh;
+
+	@include breakpoint.mq(1600px) {
+		height: auto;
+	}
+
+	display: flex;
+
+	@include breakpoint.mq(pc) {
+		flex-flow: column nowrap;
+	}
+
+
+	& header {
+		flex: 1;
+
+		@include breakpoint.mq(pc) {
+			flex: 1 0 auto;
+			height: 50svh;
+		}
+
+	}
+
+	& article {
+		flex: 1;
+
+		@include breakpoint.mq(pc) {
+			flex: 1 0 auto;
+			height: 50svh;
+		}
+
+		@include breakpoint.mq(mobile) {
+			height: auto;
+		}
+
+	}
+
+}

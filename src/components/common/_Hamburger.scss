@@ -1,0 +1,49 @@
+@use "../../scss/abstracts";
+@use "../../scss/base/media-queries" as breakpoint;
+
+.burger {
+	display: flex;
+	align-items: center;
+
+	&__button {
+		display: none;
+		& img {
+			max-width: fit-content;
+		}
+
+		@include breakpoint.mq(mobile) {
+			display: flex;
+			padding: abstracts.function_rem(5) 0;
+			z-index: 5;
+		}
+	}
+
+	& .nav {
+		@include breakpoint.mq(mobile) {
+			transition: 0.5s;
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: -100%;
+
+			&__list {
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 50svh;
+				background-color: rgba(41, 41, 41, 0.253);
+			}
+
+			&__link {
+				font-size: abstracts.function_em(24);
+			}
+
+			&.active {
+				left: 0;
+				margin: auto;
+			}
+
+		}
+
+	}
+}

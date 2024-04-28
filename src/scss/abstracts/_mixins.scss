@@ -7,15 +7,15 @@
 };
 // ____________________________
 // Clamp
-@mixin clamp($propertie, $ratio: 1.618033988749, $px) {
+@mixin clamp($property, $ratio: 1.618033988749, $px) {
   $min: calc($px / $ratio);
   $curr: calc($px / 12);
-  #{$propertie}: clamp(rem($min), #{$curr}vw, rem($px));
+  #{$property}: clamp(rem($min), #{$curr}vw, rem($px));
 };
 // ____________________________
 // Font styling
 @mixin font($font-family: null,
-$font-size: clamp, $cl-propertie: font-size, $cl-ratio: null, $cl-px: 18,
+$font-size: clamp, $cl-property: font-size, $cl-ratio: null, $cl-px: 18,
 $font-weight: 400,
 $line-height: null,
 $letter-spacing: null,
@@ -36,9 +36,9 @@ $color: null
   // Font Size
   @if ($font-size == clamp) {
     @if ($cl-ratio != null) {
-      @include clamp($propertie: $cl-propertie, $ratio: $cl-ratio, $px: $cl-px);
+      @include clamp($property: $cl-property, $ratio: $cl-ratio, $px: $cl-px);
     } @else if ($cl-ratio == null) {
-      @include clamp($propertie: $cl-propertie, $px: $cl-px);
+      @include clamp($property: $cl-property, $px: $cl-px);
     };
   } @else {
     font-size: rem($font-size);

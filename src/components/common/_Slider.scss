@@ -1,0 +1,25 @@
+@use "../../scss/abstracts";
+
+.slider {
+
+	display: flex;
+
+	&__button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--accent-black);
+		width: 70px;
+		height: 70px;
+		transition: 0.3s;
+		z-index: 2;
+
+		@media (hover: hover) {
+				&:hover {
+					background-color: var(--accent-grey);
+				}
+		};
+
+	}
+
+}

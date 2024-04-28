@@ -4,7 +4,7 @@ $font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation M
 // font-family
 $font-family: (
   // family - font
-  --sans: $font-dm,
-  --serif: $font-poppins,
+  --sans: $font-sans,
+  --serif: $font-serif,
   --mono: $font-mono,
 );
